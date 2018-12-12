@@ -1,0 +1,46 @@
+{
+    "itemName": "Product for Rudi",
+    "snippet": "Product brief description",
+    "about": "Product name, quantity 10 available for a sale.",
+    "pricing": {
+        "priceExclVat": 10.0,
+        "vat": "STANDARD",
+        "vatEU": "ZERO",
+        "vatNonEU": "STANDARD",
+        "currency": "EUR",
+        "domesticDelivery": false,
+        "subsidiary": {
+            "firstName": "John",
+            "middleName": "Mc",
+            "lastName": "Foo"
+        },
+        "discounts": [
+            {
+                "enabled": true,
+                "unit": "PERCENTAGE",
+                "off": 15.0,
+                "rule": "DiscountCode",
+                "codes": [
+                    "abcdy",
+                    "yxch"
+                ]
+            }
+        ]
+    },
+    "invoicing": {
+        "unit": "ITEM",
+        "trialPeriod": 10,
+        "numberSeries": {
+            "code": "DIGITS"
+        }
+    },
+    "publishing": {
+        "published": false,
+        "description": "A long product description as HTML.",
+        "comingSoon": false,
+        "googlePlus": true,
+        "facebookLike": false,
+        "linkedInShare": false,
+        "domain": "test.turnonline.biz"
+    }
+}

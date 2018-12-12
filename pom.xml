@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.ctoolkit.maven</groupId>
+        <artifactId>ctoolkit-public</artifactId>
+        <version>2</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>turnonline-product-billing-tests</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Product Billing Automated Tests</name>
+    <description>
+        TurnOnline.biz Ecosystem: Product Billing Automated Tests
+    </description>
+
+    <scm>
+        <connection>scm:git:[fetch=]git@github.com:turnonline/product-billing-tests.git</connection>
+        <developerConnection>scm:git:[push=]git@github.com:turnonline/product-billing-tests.git</developerConnection>
+        <url>https://github.com/turnonline/product-billing-tests</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Aurel Medvegy</name>
+            <id>medvegy</id>
+            <email>medvegy@turnonline.biz</email>
+        </developer>
+    </developers>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>biz.turnonline.ecosystem</groupId>
+            <artifactId>turnonline-product-billing-client</artifactId>
+            <version>1.0-20181029.153941-4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ctoolkit.restapi</groupId>
+            <artifactId>ctoolkit-rest-facade-api</artifactId>
+            <version>0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ctoolkit.restapi</groupId>
+            <artifactId>ctoolkit-rest-facade-adapter</artifactId>
+            <version>0.28</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ctoolkit.restapi</groupId>
+            <artifactId>ctoolkit-rest-facade-appengine</artifactId>
+            <version>0.28</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.truth</groupId>
+            <artifactId>truth</artifactId>
+            <version>0.42</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

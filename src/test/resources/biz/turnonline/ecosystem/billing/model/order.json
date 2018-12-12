@@ -1,0 +1,18 @@
+{
+    "status": "ACTIVE",
+    "periodicity": "QUARTERLY",
+    "invoiceType": "PROFORMA",
+    "numberOfDays": 10,
+    "customer": {
+        "email": "support@turnonline.biz",
+        "businessName": "Super Business, s.r.o.",
+        "taxId": "35456806"
+    },
+    "items": [
+        {
+            "checkedIn": true,
+            "product": {
+            }
+        }
+    ]
+}
