@@ -34,12 +34,8 @@ public class ProductSetupAndIssueInvoiceUcTest
     private Long invoiceId;
 
     @Inject()
-    @Named( "onBehalf.email" )
+    @Named( "login.email" )
     private String email;
-
-    @Inject()
-    @Named( "onBehalf.identityId" )
-    private String identityId;
 
     /**
      * To deserialize from JSON to {@link com.google.api.client.json.GenericJson}.
@@ -72,9 +68,7 @@ public class ProductSetupAndIssueInvoiceUcTest
     {
         Product product = genericJsonFromFile( "product.json", Product.class );
 
-        Product updated = facade.insert( product )
-                .onBehalf( email, identityId )
-                .finish();
+        Product updated = facade.insert( product ).finish();
 
         productId = updated.getId();
         assertThat( updated.getId() ).isNotNull();
@@ -87,9 +81,7 @@ public class ProductSetupAndIssueInvoiceUcTest
         order.getCustomer().setContactEmail( email );
         order.getItems().get( 0 ).getProduct().setId( productId );
 
-        Order updated = facade.insert( order )
-                .onBehalf( email, identityId )
-                .finish();
+        Order updated = facade.insert( order ).finish();
 
         orderId = updated.getId();
         assertThat( updated.getId() ).isNotNull();
@@ -100,9 +92,7 @@ public class ProductSetupAndIssueInvoiceUcTest
     {
         // empty instance of the invoice means no values from the order will be overridden
         // orderId identifies the parent order to be used to issue an invoice
-        Invoice updated = facade.insert( new Invoice(), new Identifier( orderId ) )
-                .onBehalf( email, identityId )
-                .finish();
+        Invoice updated = facade.insert( new Invoice(), new Identifier( orderId ) ).finish();
 
         invoiceId = updated.getId();
         assertThat( updated.getId() ).isNotNull();
@@ -112,19 +102,12 @@ public class ProductSetupAndIssueInvoiceUcTest
     public void cleanup() throws InterruptedException
     {
         Identifier identifier = new Identifier( orderId ).add( invoiceId );
-        facade.delete( Invoice.class ).identifiedBy( identifier )
-                .onBehalf( email, identityId )
-                .finish();
+        facade.delete( Invoice.class ).identifiedBy( identifier ).finish();
 
         // workaround, wait until invoice will be deleted from datastore, otherwise order deletion fails
         Thread.sleep( 2000 );
 
-        facade.delete( Order.class ).identifiedBy( orderId )
-                .onBehalf( email, identityId )
-                .finish();
-
-        facade.delete( Product.class ).identifiedBy( productId )
-                .onBehalf( email, identityId )
-                .finish();
+        facade.delete( Order.class ).identifiedBy( orderId ).finish();
+        facade.delete( Product.class ).identifiedBy( productId ).finish();
     }
 }
