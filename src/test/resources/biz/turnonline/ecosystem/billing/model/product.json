@@ -41,6 +41,8 @@
         "googlePlus": true,
         "facebookLike": false,
         "linkedInShare": false,
-        "domain": "test.turnonline.biz"
+        "at": {
+            "name": "test.turnonline.biz"
+        }
     }
 }
