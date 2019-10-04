@@ -37,23 +37,28 @@
     <dependencies>
         <dependency>
             <groupId>biz.turnonline.ecosystem</groupId>
+            <artifactId>turnonline-account-steward-client</artifactId>
+            <version>0.17</version>
+        </dependency>
+        <dependency>
+            <groupId>biz.turnonline.ecosystem</groupId>
             <artifactId>turnonline-product-billing-client</artifactId>
-            <version>0.9</version>
+            <version>0.19</version>
         </dependency>
         <dependency>
             <groupId>org.ctoolkit.restapi</groupId>
             <artifactId>ctoolkit-rest-facade-api</artifactId>
-            <version>0.24</version>
+            <version>0.27</version>
         </dependency>
         <dependency>
             <groupId>org.ctoolkit.restapi</groupId>
             <artifactId>ctoolkit-rest-facade-adapter</artifactId>
-            <version>0.28</version>
+            <version>0.34</version>
         </dependency>
         <dependency>
             <groupId>org.ctoolkit.restapi</groupId>
             <artifactId>ctoolkit-rest-facade-appengine</artifactId>
-            <version>0.28</version>
+            <version>0.34</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

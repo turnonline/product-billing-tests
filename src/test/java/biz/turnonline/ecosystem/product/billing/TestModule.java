@@ -1,12 +1,12 @@
 package biz.turnonline.ecosystem.product.billing;
 
-import biz.turnonline.ecosystem.billing.facade.ProductBillingAdapteeModule;
-import biz.turnonline.ecosystem.billing.facade.ProductBillingClientModule;
+import biz.turnonline.ecosystem.steward.facade.AccountStewardAdapterModule;
+import biz.turnonline.ecosystem.steward.facade.AccountStewardClientModule;
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
 import org.ctoolkit.restapi.client.ApiCredential;
 import org.ctoolkit.restapi.client.appengine.CtoolkitRestFacadeAppEngineModule;
-import org.ctoolkit.restapi.client.appengine.DefaultOrikaMapperFactoryModule;
+import org.ctoolkit.restapi.client.appengine.CtoolkitRestFacadeDefaultOrikaModule;
 
 /**
  * Guice module.
@@ -20,9 +20,9 @@ public class TestModule
     protected void configure()
     {
         install( new CtoolkitRestFacadeAppEngineModule() );
-        install( new DefaultOrikaMapperFactoryModule() );
-        install( new ProductBillingClientModule() );
-        install( new ProductBillingAdapteeModule() );
+        install( new CtoolkitRestFacadeDefaultOrikaModule() );
+        install( new AccountStewardClientModule() );
+        install( new AccountStewardAdapterModule() );
 
         ApiCredential configuration = new ApiCredential();
         configuration.load( "/api.properties" );
